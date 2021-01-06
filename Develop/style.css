@@ -1,7 +1,13 @@
+body {
+    color: #1f1f1f ;
+    font-family: 'Poppins', sans-serif;
+}
+
 #vhigh {
     float: left;
     position: relative;
     left: 20%;
+    color: purple;
 }
 
 #timer {
