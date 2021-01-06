@@ -21,3 +21,7 @@ body {
     position: absolute;
     width: 100vw;
 }
+
+#msg {
+    margin-top: 1rem;
+}
