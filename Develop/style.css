@@ -1,0 +1,17 @@
+#vhigh {
+    float: left;
+    position: relative;
+    left: 20%;
+}
+
+#timer {
+    float: right;
+    position: relative;
+    right: 20%;
+}
+
+#mt {
+    top: 10%;
+    position: absolute;
+    width: 100vw;
+}
