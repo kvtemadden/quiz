@@ -25,3 +25,26 @@ body {
 #msg {
     margin-top: 1rem;
 }
+
+button {
+    background: purple;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+button:hover {
+    background: rgb(68, 5, 68);
+    cursor: pointer;
+}
+
+#content {
+    clear: both;
+    display: inline-block;
+    position: absolute;
+    top: 20%;
+    width: 800px;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+}
