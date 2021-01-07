@@ -4,8 +4,13 @@ var startBtn = document.getElementById("start");
 startBtn.addEventListener("click", startQuiz);
 
 function startQuiz() {
-    countdown.innerHTML;
+      startTimer();
+      startBtn.className = "hide";
+      debugger;
+      firstQuestion();
+}
 
+function startTimer () {
     var timerInterval = setInterval(function() {
         secondsLeft--;
         countdown.textContent = secondsLeft;
@@ -19,47 +24,39 @@ function startQuiz() {
       }, 1000);
 }
 
-const countdown = document.getElementById("time-left");
-const quizContent = document.getElementById("content");
-const questions = [
+function firstQuestion() {
+    var questionJSON = JSON.stringify(quizQuestions);
+    var questionString = JSON.parse(questionJSON);
+     title.textContent = questionString[0].question1;
+}
+
+var title = document.getElementById("main-title");
+var info = document.getElementsByTagName("p");
+var countdown = document.getElementById("time-left");
+var quizContent = document.getElementById("content");
+var quizQuestions = [
     {
-        question: "Question 1",
-        answers: {
-            a: option1,
-            b: option2,
-            c: option3,
-        }
-        },
-        {
-        question: "Question 2",
-        answers: {
-            a: option1,
-            b: option2,
-            c: option3,
-        }
-        },
-        {
-        question: "Question 3",
-        answers: {
-            a: option1,
-            b: option2,
-            c: option3,
-        }
-        },
-        {
-        question: "Question 4",
-        answers: {
-            a: option1,
-            b: option2,
-            c: option3,
-        }
-        },
-        {
-        question: "Question 5",
-        answers: {
-            a: option1,
-            b: option2,
-            c: option3,
-        }
+      question1: "Who invented JavaScript?",
+      answers1: {
+        a: "Douglas Crockford",
+        b: "Sheryl Sandberg",
+        c: "Brendan Eich"
+      },
+    },
+    {
+      question2: "Which one of these is a JavaScript package manager?",
+      answers2: {
+        a: "Node.js",
+        b: "TypeScript",
+        c: "npm"
+      },
+    },
+    {
+      question3: "Which tool can you use to ensure code quality?",
+      answers3: {
+        a: "Angular",
+        b: "jQuery",
+        c: "RequireJS",
+      },
     }
-    ];
+  ];
