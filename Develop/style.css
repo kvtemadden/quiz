@@ -26,6 +26,10 @@ body {
     margin-top: 1rem;
 }
 
+.hide {
+    display: none;
+}
+
 button {
     background: purple;
     color: #fff;
