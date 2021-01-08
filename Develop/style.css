@@ -70,3 +70,24 @@ li:hover {
     background: rgb(68, 5, 68);
     cursor: pointer;
 }
+
+input {
+    margin-right: 1rem;
+}
+
+#msg {
+    text-align: center;
+}
+
+#msg.success,
+#msg.error {
+  visibility: visible;
+}
+
+#msg.success {
+  color: #136816;
+}
+
+#msg.error {
+  color: #72070a;
+}
