@@ -4,6 +4,7 @@ var ansList = document.createElement("ul");
 var title = document.getElementById("main-title");
 var info = document.getElementById("main-text");
 var countdown = document.getElementById("time-left");
+var displayMessage = "";
 var quizContent = document.getElementById("content");
 var quizQuestions = [
   {
@@ -54,9 +55,56 @@ function startTimer() {
 
     if (secondsLeft <= 0) {
       clearInterval(timerInterval);
+      gameOver();
     }
 
   }, 1000);
+}
+
+function gameOver() {
+  title.textContent = "All done! Your final score is: " + secondsLeft;
+  info.textContent = "";
+  var highscore = document.createElement("div");
+  highscore.textContent = "Enter your initials: ";
+  var formInput = document.createElement("input");
+  var submitBtn = document.createElement("button");
+  submitBtn.textContent = "Submit";
+  highscore.appendChild(formInput);
+  highscore.appendChild(submitBtn);
+  info.appendChild(highscore);
+
+  function displayMessage(type, message) {
+    var msgDiv = document.getElementById("msg");
+    msgDiv.textContent = message;
+    msgDiv.setAttribute("class", type);
+  }
+
+  submitBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    debugger;
+    
+    var user = {
+      initials: formInput.value.trim(),
+      score: secondsLeft,
+    };  
+   
+    // validate the fields
+    if (formInput.value === "") {
+      displayMessage("error", "Initials cannot be blank");
+    }
+    else if (formInput.value.length > 3) {
+      displayMessage("error", "Initials cannot be longer than 3 characters")
+    }
+    else {
+      displayMessage("success", "Registered successfully");
+    
+      // set new submission
+      console.log(user);
+      var userString = JSON.stringify(user);
+      JSON.parse(userString);
+      localStorage.setItem("user", userString);
+    }
+  });
 }
 
 function firstQuestion() {
@@ -76,16 +124,16 @@ var printObj = function (ans) {
     if (typeof ans[letter] == 'string') {
       string += letter + ': ' + ans[letter];
       indvAns = document.createElement("li");
-  indvAns.innerHTML = string;
-  ansList.appendChild(indvAns);
-  string = '';
+      indvAns.innerHTML = string;
+      ansList.appendChild(indvAns);
+      string = '';
     }
     else {
       string += letter + print(ans[letter]);
       indvAns = document.createElement("li");
-  indvAns.innerHTML = string;
-  ansList.appendChild(indvAns);
-  string = '';
+      indvAns.innerHTML = string;
+      ansList.appendChild(indvAns);
+      string = '';
     }
   }
 
