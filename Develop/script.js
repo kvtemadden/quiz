@@ -61,6 +61,38 @@ function startTimer() {
   }, 1000);
 }
 
+function firstQuestion() {
+  var questionJSON = JSON.stringify(quizQuestions);
+  var questionString = JSON.parse(questionJSON);
+  title.textContent = questionString[0].question;
+  var answerJSON = JSON.stringify(questionString[0].answers);
+  var answerString = JSON.parse(answerJSON);
+  info.textContent = printObj(answerString);
+  info.appendChild(ansList);
+}
+
+
+
+var printObj = function (ans) {
+  for (var letter in ans) {
+    if (typeof ans[letter] == 'string') {
+      string += letter + ': ' + ans[letter];
+      indvAns = document.createElement("li");
+      indvAns.innerHTML = string;
+      ansList.appendChild(indvAns);
+      string = '';
+    }
+    else {
+      string += letter + print(ans[letter]);
+      indvAns = document.createElement("li");
+      indvAns.innerHTML = string;
+      ansList.appendChild(indvAns);
+      string = '';
+    }
+  }
+
+}
+
 function gameOver() {
   title.textContent = "All done! Your final score is: " + secondsLeft;
   info.textContent = "";
@@ -103,38 +135,8 @@ function gameOver() {
       var userString = JSON.stringify(user);
       JSON.parse(userString);
       localStorage.setItem("user", userString);
+      showHighscores();
     }
   });
 }
 
-function firstQuestion() {
-  var questionJSON = JSON.stringify(quizQuestions);
-  var questionString = JSON.parse(questionJSON);
-  title.textContent = questionString[0].question;
-  var answerJSON = JSON.stringify(questionString[0].answers);
-  var answerString = JSON.parse(answerJSON);
-  info.textContent = printObj(answerString);
-  info.appendChild(ansList);
-}
-
-
-
-var printObj = function (ans) {
-  for (var letter in ans) {
-    if (typeof ans[letter] == 'string') {
-      string += letter + ': ' + ans[letter];
-      indvAns = document.createElement("li");
-      indvAns.innerHTML = string;
-      ansList.appendChild(indvAns);
-      string = '';
-    }
-    else {
-      string += letter + print(ans[letter]);
-      indvAns = document.createElement("li");
-      indvAns.innerHTML = string;
-      ansList.appendChild(indvAns);
-      string = '';
-    }
-  }
-
-}
