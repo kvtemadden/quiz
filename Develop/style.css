@@ -61,9 +61,8 @@ li {
     color: #fff;
     font-weight: 500;
     margin-top: .6rem;
-    padding: 2px;
-    padding-left: 1rem;
-    width: 400px;
+    padding: 0 1rem;
+    width: fit-content;
 }
 
 li:hover {
