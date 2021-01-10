@@ -372,3 +372,53 @@ section .option_list .option.disabled{
 li {
     list-style: none;
 }
+
+/* Responsive for smaller devices */
+
+@media (max-width: 500px) {
+
+/* Moves all the content to the middle of the page */
+.start_btn,
+.info_box,
+.quiz_box,
+.result_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: none;
+}
+
+/* This will allow me to show the relevant info via JS */
+.info_box.activeInfo,
+.quiz_box.activeQuiz,
+.result_box.activeResult{
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    width: 100vw;
+    height: 400px;
+}
+
+
+.info_box .buttons{
+    height: 60px;
+    width: fit-content;
+    display: inline-grid;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 30px;
+    border-top: none;
+}
+
+.quiz_box header {
+    box-shadow: none;
+}
+
+.info_box .buttons button {
+    width: fit-content;
+    margin-top: .3rem;
+
+}
+}
