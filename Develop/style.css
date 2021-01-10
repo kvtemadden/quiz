@@ -1,3 +1,15 @@
+/* Moves all the content to the middle of the page */
+.start_btn,
+.info_box,
+.quiz_box,
+.result_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 /* This will allow me to show the relevant info via JS */
 .info_box.activeInfo,
@@ -21,6 +33,28 @@
     transition: all 0.3s ease;
 }
 
+/* Styling for the title of the box with a border to show a divider */
+.info_box .info-title{
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    border-radius: 5px 5px 0 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.info_box .info-list{
+    padding: 15px 30px;
+}
+
+.info_box .info-list .info{
+    margin: 5px 0;
+    font-size: 17px;
+}
+
 /* This is where the quiz questions etc. are held - hidden */
 
 .quiz_box{
@@ -31,6 +65,58 @@
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
+}
+
+
+.quiz_box header{
+    position: relative;
+    z-index: 2;
+    height: 70px;
+    padding: 0 30px;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+}
+
+/* Title text styling */
+.quiz_box header .title{
+    font-size: 20px;
+    font-weight: 600;
+}
+/* Timer styling */
+.quiz_box header .timer{
+    color: #440544;
+    height: 45px;
+    padding: 0 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+}
+
+/* Time left: text styling */
+.quiz_box header .timer .time_left_txt{
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+/* Seconds left styling */
+.quiz_box header .timer .timer_sec{
+    font-size: 18px;
+    font-weight: 500;
+    height: 30px;
+    width: 45px;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    background: #343a40;
+    border: 1px solid #343a40;
+    user-select: none;
 }
 
 /* This is where the results/highscores are held - hidden */
