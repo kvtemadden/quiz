@@ -98,8 +98,10 @@ continue_btn.onclick = () => {
   startTimer(); //calling startTimer function
 }
 
+// Creates variable outside of timer
 var timerInterval = "";
 
+// Countdown timer
 function startTimer(){
             timerInterval = setInterval(function () {
             timeValue--;
@@ -119,6 +121,7 @@ function queCounter(index){
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }
 
+// -5 seconds from timer
 function incrAnsTimer(){
  clearInterval(timerInterval);
  timeValue -= 5;
@@ -198,44 +201,47 @@ viewHS.addEventListener("click", function (event) {
   highscore_box.classList.add("activeResult"); //show result box
 })
 
-
+// Shows the score of the user
 function showResult() {
-  clearInterval(timerInterval);
+  clearInterval(timerInterval); // resets timer
   secondsLeft = document.querySelector(".timer_sec").textContent;
   info_box.classList.remove("activeInfo"); //hide info box
   quiz_box.classList.remove("activeQuiz"); //hide quiz box
   result_box.classList.add("activeResult"); //show result box
   var scoreText = result_box.querySelector(".score_text");
-  var scoreTag = '<span>All done! Your final score is ' + secondsLeft + '</span>';
-  scoreText.innerHTML = scoreTag;
+  var scoreTag = '<span>All done! Your final score is ' + secondsLeft + '</span>'; //shows user their score
+  scoreText.innerHTML = scoreTag; //pushes info to page
 
   var formInput = document.getElementById("formInput");
 
+  // to display a message based on criteria below for setting initials
   function displayMessage(type, message) {
     var msgDiv = document.getElementById("msg");
     msgDiv.textContent = message;
     msgDiv.setAttribute("class", type);
   }
 
+  // On submit button clicked...
+
   submitBtn.addEventListener("click", function (event) {
     event.preventDefault();
 
 
-
+// stores user info
     var user = {
       initials: formInput.value.trim(),
       score: secondsLeft,
     };
 
     // validate the fields
-    if (formInput.value === "") {
+    if (formInput.value === "") { // tells user their input can't be blank to save a highscore
       displayMessage("error", "Initials cannot be blank");
     }
-    else if (formInput.value.length > 3) {
+    else if (formInput.value.length > 3) { //if pw is longer than 3 characters show error & message
       displayMessage("error", "Initials cannot be longer than 3 characters")
     }
     else {
-      displayMessage("success", "Registered successfully");
+      displayMessage("success", "Registered successfully"); //displays registered successfully & shows highscore board
       result_box.classList.remove("activeResult"); //hide result box
       restart_quiz2.textContent = "Replay Quiz";
 
@@ -257,7 +263,7 @@ function showResult() {
   });
 
   var highscorersList = document.querySelector(".hscores");
-
+// adds highscore to scoreoard
   function renderHighscores() {
     debugger;
 
@@ -273,6 +279,7 @@ function showResult() {
 var restart_quiz = result_box.querySelector(".buttons .restart");
 var restart_quiz2 = highscore_box.querySelector(".buttons .restart");
 
+// restarts quiz
 restart_quiz.onclick = () => {
   info_box.classList.add("activeInfo"); // show info box
   result_box.classList.remove("activeResult"); //hide result box
@@ -285,7 +292,7 @@ restart_quiz.onclick = () => {
   next_btn.classList.remove("show"); //hide the next button
 }
 
-
+// restarts quiz btn 2
 restart_quiz2.onclick = () => {
   info_box.classList.add("activeInfo"); // show info box
   result_box.classList.remove("activeResult"); //hide result box
