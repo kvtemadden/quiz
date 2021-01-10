@@ -1,92 +1,108 @@
-body {
-    color: #1f1f1f ;
-    font-family: 'Poppins', sans-serif;
-}
+/* Buttons */
 
-#vhigh {
-    float: left;
-    position: relative;
-    left: 20%;
-    color: purple;
-}
-
-#timer {
-    float: right;
-    position: relative;
-    right: 20%;
-}
-
-#mt {
-    top: 10%;
-    position: absolute;
-    width: 100vw;
-}
-
-#msg {
-    margin-top: 1rem;
-}
-
-.hide {
-    display: none;
-}
-
-button {
-    background: purple;
-    color: #fff;
+.start_btn button{
+    font-size: 25px;
     font-weight: 500;
-    border-radius: 8px;
-}
-
-button:hover {
-    background: rgb(68, 5, 68);
+    color: white;
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: purple;
     cursor: pointer;
 }
 
-#content {
-    text-align: center;
-    padding-top: 1rem;
+.info_box .buttons{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 30px;
+    border-top: 1px solid lightgrey;
 }
 
-#c {
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 10%;
-}
-
-li {
-    text-align: left;
-    list-style: none;
-    border-radius: 8px;
-    background: purple;
-    color: #fff;
-    font-weight: 500;
-    margin-top: .6rem;
-    padding: 0 1rem;
+.info_box .buttons button{
+    margin: 0 5px;
+    height: 40px;
     width: fit-content;
-}
-
-li:hover {
-    background: rgb(68, 5, 68);
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid purple;
+    transition: all 0.3s ease;
 }
 
-input {
-    margin-right: 1rem;
+.highscore_submit {
+    margin: 1rem 0;
 }
 
-#msg {
-    text-align: center;
+.result_box .buttons{
+    display: flex;
+    margin: 20px 0;
 }
 
-#msg.success,
-#msg.error {
-  visibility: visible;
+.result_box .buttons button{
+    margin: 0 10px;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid purple;
+    transition: all 0.3s ease;
 }
 
-#msg.success {
-  color: #136816;
+.buttons button.restart{
+    color: #fff;
+    background: purple;
 }
 
-#msg.error {
-  color: #72070a;
+.buttons button.restart:hover{
+    background: #440544;
+}
+
+.buttons button.quit{
+    color: purple;
+    background: #fff;
+}
+
+.buttons button.quit:hover{
+    color: #fff;
+    background: purple;
+}
+
+footer button{
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    background: purple;
+    border: 1px solid purple;
+    line-height: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+footer button:hover{
+    background: #440544;
+}
+
+footer button.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
 }
