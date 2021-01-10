@@ -1,3 +1,5 @@
+
+/* This will allow me to show the relevant info via JS */
 .info_box.activeInfo,
 .quiz_box.activeQuiz,
 .result_box.activeResult{
@@ -5,6 +7,47 @@
     z-index: 5;
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
+}
+
+/* This is where the quiz info is held - hidden */
+
+.info_box{
+    width: 540px;
+    background: #fff;
+    border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* This is where the quiz questions etc. are held - hidden */
+
+.quiz_box{
+    width: 550px;
+    background: #fff;
+    border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* This is where the results/highscores are held - hidden */
+
+.result_box{
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    padding: 25px 30px;
+    width: 450px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
 }
 
 /* Buttons */
