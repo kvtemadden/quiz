@@ -73,24 +73,78 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var timerInterval = "";
   var highscoresList = [];
   var newHS = 0;
+  var timeValue = 60;
+  var que_count = 0;
+  var que_numb = 1;
+  var userScore = 0;
 
   // if startQuiz button clicked
   start_btn.onclick = () => {
     info_box.classList.add("activeInfo"); //show info box
   }
 
+
+  // if exitQuiz button clicked
+  exit_btn.onclick = () => {
+    info_box.classList.remove("activeInfo"); //hide info box
+  }
+
+  // if continueQuiz button clicked
+  continue_btn.onclick = () => {
+    timeValue = 60;
+    info_box.classList.remove("activeInfo"); //hide info box
+    quiz_box.classList.add("activeQuiz"); //show quiz box
+    showQuetions(0); //calling showQestions function
+    queCounter(1); //passing 1 to queCounter
+    startTimer(); //calling startTimer function
+  }
   
-// if exitQuiz button clicked
-exit_btn.onclick = ()=>{
-  info_box.classList.remove("activeInfo"); //hide info box
+  // getting questions and options from array
+function showQuetions(index){
+  var que_text = document.querySelector(".que_text");
+
+  //creating a new span and div tag for question and option and passing the value using array index
+  var que_tag = '<span>'+ quizQuestions[index].numb + ". " + quizQuestions[index].question +'</span>';
+  var option_tag = '<div class="option"><span>'+ quizQuestions[index].options[0] +'</span></div>'
+  + '<div class="option"><span>'+ quizQuestions[index].options[1] +'</span></div>'
+  + '<div class="option"><span>'+ quizQuestions[index].options[2] +'</span></div>'
+  + '<div class="option"><span>'+ quizQuestions[index].options[3] +'</span></div>';
+  que_text.innerHTML = que_tag; //adding new span tag inside que_tag
+  option_list.innerHTML = option_tag; //adding new div tag inside option_tag
+  
+  var option = option_list.querySelectorAll(".option");
+
+  // set onclick attribute to all available options
+  for(i=0; i < option.length; i++){
+      option[i].setAttribute("onclick", "optionSelected(this)");
+  }
 }
 
-// if continueQuiz button clicked
-continue_btn.onclick = ()=>{
-  timeValue = 60;
-  info_box.classList.remove("activeInfo"); //hide info box
-  quiz_box.classList.add("activeQuiz"); //show quiz box
+  var timerInterval = "";
 
-}
+  function startTimer() {
+    timerInterval = setInterval(function () {
+      timeValue--;
+      timeCount.textContent = timeValue;
+
+
+      if (timeValue <= 0) {
+        clearInterval(timerInterval);
+        showResult();
+      }
+    }, 1000);
+  }
+
+  function queCounter(index) {
+    //creating a new span tag and passing the question number and total question
+    var totalQueCounTag = '<span><p>' + index + '</p> of <p>' + quizQuestions.length + '</p> Questions</span>';
+    bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
+  }
+
+  function incrAnsTimer() {
+    clearInterval(timerInterval);
+    timeValue -= 5;
+    startTimer();
+  }
 
 })
