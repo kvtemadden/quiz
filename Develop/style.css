@@ -1,3 +1,12 @@
+/* importing google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 /* Moves all the content to the middle of the page */
 .start_btn,
 .info_box,
@@ -46,10 +55,12 @@
     font-weight: 600;
 }
 
+/* Adding spacing for the information before you proceed to the quiz */
 .info_box .info-list{
     padding: 15px 30px;
 }
 
+/* Text styling for info box */
 .info_box .info-list .info{
     margin: 5px 0;
     font-size: 17px;
@@ -67,7 +78,7 @@
     transition: all 0.3s ease;
 }
 
-
+/* Makes it look like the top section is separate/above the quiz info */
 .quiz_box header{
     position: relative;
     z-index: 2;
@@ -165,6 +176,33 @@ section .option_list .option:hover{
     border: 1px solid white;
 }
 
+/* Styling for the bottom of the quiz box */
+footer{
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid lightgrey;
+}
+
+/* Styling for the total questions area */
+footer .total_que span{
+    display: flex;
+    user-select: none;
+}
+
+/* Styling for the text displayed in total questions asked/left */
+footer .total_que span p{
+    font-weight: 500;
+    padding: 0 5px;
+}
+
+/* Moves further to the left */
+footer .total_que span p:first-child{
+    padding-left: 0px;
+}
+
 /* This is where the results/highscores are held - hidden */
 
 .result_box{
@@ -180,6 +218,26 @@ section .option_list .option:hover{
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
+}
+
+/* Title for the results box styling */
+.result_box .complete_text{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* styling for the information for giving results */
+.result_box .score_text span{
+    display: flex;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Text styling on results box */
+.result_box .score_text span p{
+    padding: 0 4px;
+    font-weight: 600;
 }
 
 /* Buttons */
