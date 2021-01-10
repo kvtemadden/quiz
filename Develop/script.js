@@ -80,5 +80,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
 
   
+// if exitQuiz button clicked
+exit_btn.onclick = ()=>{
+  info_box.classList.remove("activeInfo"); //hide info box
+}
 
 })
