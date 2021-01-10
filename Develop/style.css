@@ -348,3 +348,27 @@ footer button.show{
     pointer-events: auto;
     transform: scale(1);
 }
+
+/* Styling for if answer is right or wrong */
+
+section .option_list .option.correct{
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+section .option_list .option.incorrect{
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+section .option_list .option.disabled{
+    pointer-events: none;
+}
+
+/* Removes bullet points from highscores list */
+
+li {
+    list-style: none;
+}
