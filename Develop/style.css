@@ -119,6 +119,52 @@
     user-select: none;
 }
 
+/* Styling for questions area */
+section{
+    padding: 25px 30px 20px 30px;
+    background: #fff;
+}
+
+/* Styling for the question being asked */
+section .que_text{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+/* Styling for the question answers list */
+section .option_list{
+    padding: 20px 0px;
+    display: block;   
+}
+
+/* Styling for individual questions (makes them appear as buttons) */
+section .option_list .option{
+    color: white;
+    background: purple;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Removes the margin on the last answer */
+section .option_list .option:last-child{
+    margin-bottom: 0px;
+}
+
+/* Changes the answer option styling on hover */
+section .option_list .option:hover{
+    color: white;
+    background: #440544;
+    border: 1px solid white;
+}
+
 /* This is where the results/highscores are held - hidden */
 
 .result_box{
