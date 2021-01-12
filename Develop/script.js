@@ -265,7 +265,6 @@ function showResult() {
   var highscorersList = document.querySelector(".hscores");
 // adds highscore to scoreoard
   function renderHighscores() {
-    debugger;
 
     for (newHS; newHS < highscoresList.length; newHS++) {
       var highscore = highscoresList[newHS];
