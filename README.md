@@ -6,7 +6,7 @@ People can play competitively from the same computer to see who's able to beat t
 ## Contents
 Section | Description
 ------------ | -------------
-[Screenshot](#screenshot) | Screenshots of the password generator and links to the working site & repo.
+[Screenshot](#screenshot) | Screenshots of the quiz and links to the working site & repo.
 [Functionality](#functionality) | Information on the functionality of the quiz.
 [Licence](#licence) | Licence for the source code
 
