@@ -11,7 +11,7 @@ Section | Description
 [Licence](#licence) | Licence for the source code
 
 ## Screenshot
-![Screenshot of working quiz](Assets/Screenshot_of_quiz.PNG)
+![Screenshot of working quiz](Assets/screenshot_of_quiz.PNG)
 
 You can access the site via [this link](https://kvtemadden.github.io/quiz/)
 
