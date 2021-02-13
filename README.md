@@ -17,6 +17,8 @@ You can access the site via [this link](https://kvtemadden.github.io/quiz/)
 
 And you can access the GitHub Repo via [this link](https://github.com/kvtemadden/quiz)
 
+Languages: HTML, CSS, jQuery
+
 ## Functionality
 The quiz works by clicking a start button which opens up an introductory screen.
 
